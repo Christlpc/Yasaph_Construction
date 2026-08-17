@@ -746,23 +746,121 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* AEO / SEO FAQ SECTION (Direct Answers for AI Engines & Google Rich Snippets) */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          {/* FAQ JSON-LD Schema */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'FAQPage',
+                mainEntity: [
+                  {
+                    '@type': 'Question',
+                    name: 'Quelle est la spécialité de Yasaph Construction à Kinshasa en RDC ?',
+                    acceptedAnswer: {
+                      '@type': 'Answer',
+                      text: 'Yasaph Construction est une entreprise générale de BTP à Kinshasa spécialisée dans les gros œuvres en béton armé (structures R+0 à R+12, fondations profondes), la conception de plans d\'architecte 2D/3D et la rénovation haut standing de bâtiments résidentiels et commerciaux.',
+                    },
+                  },
+                  {
+                    '@type': 'Question',
+                    name: 'Comment fonctionne le suivi de chantier à distance pour la diaspora congolaise ?',
+                    acceptedAnswer: {
+                      '@type': 'Answer',
+                      text: 'Yasaph Construction propose un dispositif digitalisé pour les investisseurs et la diaspora : rapports vidéos hebdomadaires par drone, points d\'étape réguliers en visio-conférence, facturation transparente par tranches validées et accès direct à l\'ingénieur en chef.',
+                    },
+                  },
+                  {
+                    '@type': 'Question',
+                    name: 'Quelles sont les normes techniques appliquées sur vos chantiers de béton armé ?',
+                    acceptedAnswer: {
+                      '@type': 'Answer',
+                      text: 'Tous nos chantiers respectent les normes parasismiques et les règles de calcul BAEL/Eurocode. Les bétons sont systématiquement dosés à 350-400 kg/m³ et testés en laboratoire avec écrasement d\'éprouvettes à 7 et 28 jours.',
+                    },
+                  },
+                  {
+                    '@type': 'Question',
+                    name: 'Quel est le délai pour obtenir un devis de construction ou une étude de faisabilité ?',
+                    acceptedAnswer: {
+                      '@type': 'Answer',
+                      text: 'Nos ingénieurs et architectes basés à la Gombe remettent un devis quantitatif et estimatif détaillé (DQE) sous 24 à 48 heures ouvrées après réception des plans ou visite du terrain.',
+                    },
+                  },
+                ],
+              }),
+            }}
+          />
+
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <p className="text-xs font-black tracking-widest uppercase text-[#0090D0]">
+              Questions Fréquentes & Renseignements
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-black text-[#0F2744] tracking-tight">
+              Tout ce que vous devez savoir pour bâtir sereinement
+            </h2>
+            <p className="text-slate-600 text-sm sm:text-base font-medium">
+              Des réponses claires à vos questions techniques, administratives et budgétaires en RDC.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="p-7 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+              <h3 className="text-base font-extrabold text-[#0F2744]">
+                Quelle est la spécialité de Yasaph Construction à Kinshasa ?
+              </h3>
+              <p className="text-slate-600 text-xs sm:text-sm font-normal leading-relaxed">
+                Yasaph Construction est une entreprise générale de BTP à Kinshasa spécialisée dans les <strong>gros œuvres en béton armé</strong> (structures R+0 à R+12, fondations profondes), la conception de plans 2D/3D et la rénovation lourde de bâtiments résidentiels et tertiaires.
+              </p>
+            </div>
+
+            <div className="p-7 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+              <h3 className="text-base font-extrabold text-[#0F2744]">
+                Comment fonctionne le suivi de chantier pour la diaspora ?
+              </h3>
+              <p className="text-slate-600 text-xs sm:text-sm font-normal leading-relaxed">
+                Nous mettons à disposition un espace de suivi digitalisé : <strong>rapports vidéos hebdomadaires par drone</strong>, visio-conférences régulières, déblocage des fonds par tranches d'avancement vérifiées et contact direct avec l'ingénieur référent.
+              </p>
+            </div>
+
+            <div className="p-7 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+              <h3 className="text-base font-extrabold text-[#0F2744]">
+                Quelles sont les normes appliquées sur le béton et les structures ?
+              </h3>
+              <p className="text-slate-600 text-xs sm:text-sm font-normal leading-relaxed">
+                Tous nos ouvrages respectent les règles parasismiques et les normes BAEL. Les bétons sont dosés à 350-400 kg/m³ avec <strong>tests d'écrasement en laboratoire</strong> et vérification rigoureuse du ferraillage FeE500 avant tout coulage.
+              </p>
+            </div>
+
+            <div className="p-7 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-3">
+              <h3 className="text-base font-extrabold text-[#0F2744]">
+                Quel est le délai pour obtenir un devis ou une étude ?
+              </h3>
+              <p className="text-slate-600 text-xs sm:text-sm font-normal leading-relaxed">
+                Après recueil de votre cahier des charges ou étude de vos plans, notre bureau technique à la Gombe vous remet un <strong>chiffrage quantitatif estimatif (DQE) sous 24 à 48 heures ouvrées</strong> sans engagement.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* FINAL CALL TO ACTION */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-3xl overflow-hidden bg-white p-10 sm:p-16 text-center text-[#0F2744] shadow-lg border border-sky-200 space-y-6">
-            <span className="text-xs uppercase tracking-widest font-black text-[#0090D0]">
+          <div className="relative rounded-3xl overflow-hidden bg-[#0F2744] p-10 sm:p-16 text-center text-white shadow-2xl border border-sky-500/20 space-y-6">
+            <span className="text-xs uppercase tracking-widest font-black text-[#38BDF8]">
               PASSEZ À L'ACTION
             </span>
-            <h2 className="text-3xl sm:text-5xl font-black max-w-3xl mx-auto leading-tight text-[#0F2744]">
+            <h2 className="text-3xl sm:text-5xl font-black max-w-3xl mx-auto leading-tight text-white">
               Prêt à concrétiser votre projet de construction en RDC ?
             </h2>
-            <p className="text-slate-700 text-base max-w-xl mx-auto font-semibold">
-              Confiez vos plans, vos gros œuvres et vos rénovations à des professionnels chevronnés basés à Kinshasa.
+            <p className="text-slate-300 text-base max-w-xl mx-auto font-medium">
+              Confiez vos plans, vos gros œuvres et vos rénovations à des ingénieurs civils chevronnés basés à Kinshasa.
             </p>
 
             <div className="pt-4 flex flex-col sm:flex-row justify-center gap-4">
               <Link
                 href="/contact"
-                className="gold-button px-8 py-4 rounded-xl text-base font-extrabold shadow-md hover:scale-105 transition-all"
+                className="gold-button px-8 py-4 rounded-xl text-base font-black shadow-md hover:scale-105 transition-all text-center"
               >
                 Envoyer une Demande de Devis
               </Link>
@@ -770,7 +868,7 @@ export default function HomePage() {
                 href="https://wa.me/243810000000"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold px-8 py-4 rounded-xl text-base shadow-md transition-all flex items-center justify-center gap-2"
+                className="bg-emerald-600 hover:bg-emerald-700 text-white font-black px-8 py-4 rounded-xl text-base shadow-md transition-all flex items-center justify-center gap-2"
               >
                 <MessageSquare className="w-5 h-5" />
                 <span>Discuter sur WhatsApp (+243)</span>
