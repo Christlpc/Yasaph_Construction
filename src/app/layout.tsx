@@ -3,9 +3,22 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ||
-  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'https://yasaph-construction.cd');
+const getSiteUrl = () => {
+  if (process.env.NEXT_PUBLIC_SITE_URL) {
+    return process.env.NEXT_PUBLIC_SITE_URL.startsWith('http')
+      ? process.env.NEXT_PUBLIC_SITE_URL
+      : `https://${process.env.NEXT_PUBLIC_SITE_URL}`;
+  }
+  if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
+    return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
+  }
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL}`;
+  }
+  return 'https://yasaph-construction.cd';
+};
+
+const siteUrl = getSiteUrl();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -58,8 +71,10 @@ export const metadata: Metadata = {
     images: [
       {
         url: '/images/og-preview.jpg',
+        secureUrl: '/images/og-preview.jpg',
         width: 1200,
         height: 630,
+        type: 'image/jpeg',
         alt: 'Yasaph Construction - BTP & Architecture à Kinshasa RDC',
       },
     ],
@@ -175,21 +190,11 @@ export default function RootLayout({
     <html lang="fr" className="light">
       <head>
         {/* Favicon & Apple Touch Icons */}
-        <link rel="icon" href="/favicon.ico?v=3" sizes="any" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=3" />
-        <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png?v=3" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=3" />
-        <link rel="shortcut icon" href="/favicon.ico?v=3" />
-
-        {/* OpenGraph & Social Media Link Preview */}
-        <meta property="og:image" content={`${siteUrl}/images/og-preview.jpg`} />
-        <meta property="og:image:secure_url" content={`${siteUrl}/images/og-preview.jpg`} />
-        <meta property="og:image:type" content="image/jpeg" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Yasaph Construction - BTP & Architecture à Kinshasa RDC" />
-        <meta name="twitter:image" content={`${siteUrl}/images/og-preview.jpg`} />
-        <meta name="twitter:card" content="summary_large_image" />
+        <link rel="icon" href="/favicon.ico?v=4" sizes="any" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=4" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png?v=4" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=4" />
+        <link rel="shortcut icon" href="/favicon.ico?v=4" />
 
         {/* Schema.org Structured Data */}
         <script
