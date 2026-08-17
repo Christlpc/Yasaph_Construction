@@ -51,13 +51,13 @@ export const metadata: Metadata = {
     siteName: 'Yasaph Construction',
     title: 'Yasaph Construction | Référence BTP, Gros Œuvres & Architecture à Kinshasa RDC',
     description:
-      'Gros œuvres béton armé, conception architecturale 3D et rénovations de prestige à Kinshasa. Découvrez nos réalisations et demandez une étude technique sans engagement.',
+      'Société de référence en BTP et génie civil à Kinshasa, dirigée par l\'Ingénieur Fabrice Amos Tshingambu. Gros œuvres béton armé, conception 3D et rénovations d\'exception.',
     images: [
       {
-        url: '/images/hero_construction.jpg',
+        url: '/images/og-preview.jpg',
         width: 1200,
         height: 630,
-        alt: 'Chantiers et Réalisations Yasaph Construction à Kinshasa RDC',
+        alt: 'Yasaph Construction - Référence BTP & Architecture à Kinshasa RDC',
       },
     ],
   },
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     title: 'Yasaph Construction | Entreprise BTP & Architecture à Kinshasa RDC',
     description:
       'Gros œuvres béton armé, conception architecturale 3D et rénovations d\'exception en République Démocratique du Congo.',
-    images: ['/images/hero_construction.jpg'],
+    images: ['/images/og-preview.jpg'],
   },
   robots: {
     index: true,
@@ -177,6 +177,16 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png?v=2" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2" />
         <link rel="shortcut icon" href="/favicon.ico?v=2" />
+
+        {/* OpenGraph & Social Media Link Preview */}
+        <meta property="og:image" content={`${siteUrl}/images/og-preview.jpg`} />
+        <meta property="og:image:secure_url" content={`${siteUrl}/images/og-preview.jpg`} />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Yasaph Construction - Référence BTP & Architecture à Kinshasa RDC" />
+        <meta name="twitter:image" content={`${siteUrl}/images/og-preview.jpg`} />
+        <meta name="twitter:card" content="summary_large_image" />
 
         {/* Schema.org Structured Data */}
         <script
