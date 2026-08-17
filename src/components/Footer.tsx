@@ -109,9 +109,10 @@ export default function Footer() {
         <div className="border-t border-[#1B365D] mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-400">
           <p>© {new Date().getFullYear()} Yasaph Construction SARL. Tous droits réservés.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link href="/contact" className="hover:text-white transition-colors">Demander un Devis</Link>
-            <Link href="/a-propos" className="hover:text-white transition-colors">Mentions Légales</Link>
             <Link href="/services" className="hover:text-white transition-colors">Nos Services</Link>
+            <Link href="/realisations" className="hover:text-white transition-colors">Réalisations</Link>
+            <Link href="/a-propos" className="hover:text-white transition-colors">À Propos</Link>
+            <Link href="/contact" className="hover:text-white transition-colors">Demander un Devis</Link>
           </div>
         </div>
       </div>
