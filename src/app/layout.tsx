@@ -3,16 +3,18 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://yasaph-construction.cd';
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'https://yasaph-construction.cd');
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Yasaph Construction SARL | Entreprise BTP, Gros Œuvres & Architecture à Kinshasa RDC',
-    template: '%s | Yasaph Construction Kinshasa',
+    default: 'Yasaph Construction | Entreprise BTP à Kinshasa',
+    template: '%s | Yasaph Construction',
   },
   description:
-    'Société de référence en BTP et génie civil en RDC, dirigée par l\'Ingénieur Fabrice Amos Tshingambu. Spécialiste des gros œuvres béton armé, études architecturales 3D, permis de bâtir et rénovations haut standing à Kinshasa et Afrique Centrale.',
+    'Société BTP de référence à Kinshasa : Gros œuvres béton armé, conception de plans 3D, permis de bâtir et rénovations haut standing en RDC.',
   keywords: [
     'Entreprise de construction Kinshasa',
     'Société BTP RDC',
@@ -38,34 +40,35 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/icon.png', type: 'image/png' },
-      { url: '/images/Logo Yasaph 1.png', type: 'image/png' },
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+      { url: '/icon-192.png', type: 'image/png', sizes: '192x192' },
     ],
-    apple: [{ url: '/images/Logo Yasaph 1.png' }],
-    shortcut: ['/icon.png'],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180' }],
+    shortcut: ['/favicon.ico'],
   },
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
     url: siteUrl,
     siteName: 'Yasaph Construction',
-    title: 'Yasaph Construction | Référence BTP, Gros Œuvres & Architecture à Kinshasa RDC',
+    title: 'Yasaph Construction | BTP & Architecture RDC',
     description:
-      'Société de référence en BTP et génie civil à Kinshasa, dirigée par l\'Ingénieur Fabrice Amos Tshingambu. Gros œuvres béton armé, conception 3D et rénovations d\'exception.',
+      'Génie civil, gros œuvres béton armé, plans 3D et rénovations de prestige à Kinshasa.',
     images: [
       {
         url: '/images/og-preview.jpg',
         width: 1200,
         height: 630,
-        alt: 'Yasaph Construction - Référence BTP & Architecture à Kinshasa RDC',
+        alt: 'Yasaph Construction - BTP & Architecture à Kinshasa RDC',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Yasaph Construction | Entreprise BTP & Architecture à Kinshasa RDC',
+    title: 'Yasaph Construction | BTP & Architecture RDC',
     description:
-      'Gros œuvres béton armé, conception architecturale 3D et rénovations d\'exception en République Démocratique du Congo.',
+      'Génie civil, gros œuvres béton armé, plans 3D et rénovations de prestige à Kinshasa.',
     images: ['/images/og-preview.jpg'],
   },
   robots: {
@@ -104,7 +107,7 @@ export default function RootLayout({
         name: 'Yasaph Construction SARL',
         url: siteUrl,
         logo: `${siteUrl}/images/Logo%20Yasaph%201.png`,
-        image: `${siteUrl}/images/hero_construction.jpg`,
+        image: `${siteUrl}/images/og-preview.jpg`,
         description:
           'Entreprise générale de BTP, génie civil, gros œuvres en béton armé, architecture 2D/3D et rénovations de standing à Kinshasa, RDC et en Afrique Centrale.',
         founder: {
@@ -172,11 +175,11 @@ export default function RootLayout({
     <html lang="fr" className="light">
       <head>
         {/* Favicon & Apple Touch Icons */}
-        <link rel="icon" href="/favicon.ico?v=2" sizes="any" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2" />
-        <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png?v=2" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2" />
-        <link rel="shortcut icon" href="/favicon.ico?v=2" />
+        <link rel="icon" href="/favicon.ico?v=3" sizes="any" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=3" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png?v=3" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=3" />
+        <link rel="shortcut icon" href="/favicon.ico?v=3" />
 
         {/* OpenGraph & Social Media Link Preview */}
         <meta property="og:image" content={`${siteUrl}/images/og-preview.jpg`} />
@@ -184,7 +187,7 @@ export default function RootLayout({
         <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="Yasaph Construction - Référence BTP & Architecture à Kinshasa RDC" />
+        <meta property="og:image:alt" content="Yasaph Construction - BTP & Architecture à Kinshasa RDC" />
         <meta name="twitter:image" content={`${siteUrl}/images/og-preview.jpg`} />
         <meta name="twitter:card" content="summary_large_image" />
 
